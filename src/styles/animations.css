@@ -1,0 +1,10 @@
+.menu-item,
+.primary-button,
+.quick-card {
+  transition: all 0.2s ease;
+}
+
+.primary-button:hover,
+.quick-card:hover {
+  transform: translateY(-2px);
+}
