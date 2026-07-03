@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
+import DesignSystemPage from "../pages/DesignSystemPage";
 
 function DashboardPage() {
   return <h1>Dashboard</h1>;
@@ -47,6 +48,7 @@ export const router = createBrowserRouter(
         { path: "biblioteca", element: <BibliotecaPage /> },
         { path: "relatorios", element: <RelatoriosPage /> },
         { path: "configuracoes", element: <ConfiguracoesPage /> },
+        { path: "design-system", element: <DesignSystemPage /> },
       ],
     },
   ],

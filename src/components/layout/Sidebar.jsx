@@ -18,6 +18,7 @@ const menuItems = [
   { label: "Biblioteca", icon: BookOpen },
   { label: "Relatórios", icon: BarChart3 },
   { label: "Administração", icon: Settings },
+  { label: "Design System", path: "/design-system" },
 ];
 
 export default function Sidebar() {
