@@ -1,11 +1,6 @@
-import MainLayout from "../layouts/MainLayout";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./Router.jsx";
 
 export default function App() {
-  return (
-    <MainLayout>
-      <h1>Dashboard</h1>
-
-      <p>Bem-vindo ao Axé de IImpacto.</p>
-    </MainLayout>
-  );
+  return <RouterProvider router={router} />;
 }
