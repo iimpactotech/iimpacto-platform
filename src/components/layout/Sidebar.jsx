@@ -7,6 +7,7 @@ import {
   BookOpen,
   BarChart3,
   Settings,
+  Palette,
 } from "lucide-react";
 
 const menuItems = [
@@ -18,7 +19,7 @@ const menuItems = [
   { label: "Biblioteca", icon: BookOpen },
   { label: "Relatórios", icon: BarChart3 },
   { label: "Administração", icon: Settings },
-  { label: "Design System", path: "/design-system" },
+ { label: "Design System", path: "/design-system", icon: Palette },
 ];
 
 export default function Sidebar() {
@@ -38,6 +39,7 @@ export default function Sidebar() {
       <nav style={{ marginTop: 24 }}>
         {menuItems.map((item) => {
           const Icon = item.icon;
+          <Icon size={20} />
 
           return (
             <button

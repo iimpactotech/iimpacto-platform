@@ -1,0 +1,19 @@
+:root {
+
+  --ii-color-primary: #C89B3C;
+  --ii-color-primary-dark: #8A6420;
+
+  --ii-color-bg: #0B0D12;
+  --ii-color-bg-secondary: #171A20;
+
+  --ii-color-surface: #23272F;
+
+  --ii-color-text: #F8F9FA;
+  --ii-color-text-secondary: #B8BCC4;
+
+  --ii-color-success: #2ECC71;
+  --ii-color-warning: #F1C40F;
+  --ii-color-danger: #E74C3C;
+  --ii-color-info: #3498DB;
+
+}
