@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import {
   Home,
   Building2,
@@ -11,15 +12,15 @@ import {
 } from "lucide-react";
 
 const menuItems = [
-  { label: "Dashboard", icon: Home },
-  { label: "Casas", icon: Building2 },
-  { label: "Pessoas", icon: Users },
-  { label: "Rituais", icon: CalendarDays },
-  { label: "Materiais", icon: Package },
-  { label: "Biblioteca", icon: BookOpen },
-  { label: "Relatórios", icon: BarChart3 },
-  { label: "Administração", icon: Settings },
- { label: "Design System", path: "/design-system", icon: Palette },
+  { label: "Dashboard", path: "/", icon: Home },
+  { label: "Casas", path: "/casas", icon: Building2 },
+  { label: "Pessoas", path: "/pessoas", icon: Users },
+  { label: "Rituais", path: "/rituais", icon: CalendarDays },
+  { label: "Materiais", path: "/materiais", icon: Package },
+  { label: "Biblioteca", path: "/biblioteca", icon: BookOpen },
+  { label: "Relatórios", path: "/relatorios", icon: BarChart3 },
+  { label: "Administração", path: "/configuracoes", icon: Settings },
+  { label: "Design System", path: "/design-system", icon: Palette },
 ];
 
 export default function Sidebar() {
@@ -39,29 +40,28 @@ export default function Sidebar() {
       <nav style={{ marginTop: 24 }}>
         {menuItems.map((item) => {
           const Icon = item.icon;
-          <Icon size={20} />
 
           return (
-            <button
+            <NavLink
               key={item.label}
-              onClick={() => alert(`Abrir: ${item.label}`)}
-              style={{
+              to={item.path}
+              style={({ isActive }) => ({
                 width: "100%",
                 display: "flex",
                 alignItems: "center",
                 gap: 12,
-                background: "transparent",
                 color: "#FFF",
-                border: "none",
+                textDecoration: "none",
                 padding: "12px 8px",
-                cursor: "pointer",
                 fontSize: 16,
-                textAlign: "left",
-              }}
+                borderRadius: 8,
+                background: isActive ? "rgba(255,255,255,.16)" : "transparent",
+                marginBottom: 4,
+              })}
             >
               <Icon size={20} />
               <span>{item.label}</span>
-            </button>
+            </NavLink>
           );
         })}
       </nav>
