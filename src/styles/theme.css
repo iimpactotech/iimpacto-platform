@@ -4,7 +4,6 @@
 @import "../design-system/tokens/radius.css";
 @import "../design-system/tokens/shadows.css";
 @import "../design-system/tokens/animations.css";
-@import "./variables.css";
 
 * {
   margin: 0;
