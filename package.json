@@ -17,6 +17,8 @@
     "bootstrap-icons": "^1.13.1",
     "dayjs": "^1.11.18",
     "lucide": "^0.542.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
     "sweetalert2": "^11.23.0"
   }
 }

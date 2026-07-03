@@ -7,6 +7,12 @@ import './styles/animations.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import '@fortawesome/fontawesome-free/css/all.min.css'
 
-import { startApp } from './app/App.js'
+import React from 'react'
+import { createRoot } from 'react-dom/client'
+import App from './app/App.jsx'
 
-startApp()
+createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+)
