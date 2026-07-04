@@ -1,8 +1,10 @@
 import { Outlet } from "react-router-dom";
 import Header from "../components/layout/Header";
 import Sidebar from "../components/layout/Sidebar";
+import { useActiveProductFromRoute } from "../platform/hooks/useActiveProductFromRoute";
 
 export default function MainLayout() {
+  useActiveProductFromRoute();
   return (
     <div style={{ display: "flex", minHeight: "100vh" }}>
       <Sidebar />

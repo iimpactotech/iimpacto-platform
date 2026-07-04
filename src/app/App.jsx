@@ -1,6 +1,11 @@
 import { RouterProvider } from "react-router-dom";
-import { router } from "./Router.jsx";
+import { router } from "./Router";
+import { PlatformProvider } from "../platform/context/PlatformContext";
 
 export default function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <PlatformProvider>
+      <RouterProvider router={router} />
+    </PlatformProvider>
+  );
 }

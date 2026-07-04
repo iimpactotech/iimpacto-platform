@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
   Users,
   Boxes,
@@ -15,10 +16,14 @@ export default function PlatformDashboard() {
   return (
     <div>
       <HeroHeader
-        greeting="IImpacto Platform"
-        title="Hub central da IImpacto Tech"
-        description="Gerencie clientes, produtos, licenças, usuários e configurações White Label em uma única plataforma."
-        action={<Button>Acessar produtos</Button>}
+        greeting="Bom dia, Alberto 👋"
+        title="Bem-vindo à IImpacto Platform"
+        description="Ecossistema central para gestão de clientes, produtos, licenças, ambientes e configurações White Label."
+        action={
+          <Link to="/produtos">
+            <Button>Explorar Produtos</Button>
+          </Link>
+        }
       />
 
       <div
@@ -35,13 +40,15 @@ export default function PlatformDashboard() {
           icon={<Users size={24} />}
         />
 
-        <Card
-          title="Produtos"
-          value="5"
-          subtitle="Axé, Consultor, ETL, Reports e Site"
-          icon={<Boxes size={24} />}
-          variant="info"
-        />
+        <Link to="/produtos" style={{ textDecoration: "none" }}>
+          <Card
+            title="Produtos"
+            value="5"
+            subtitle="Axé, Consultor, ETL, Reports e Site"
+            icon={<Boxes size={24} />}
+            variant="info"
+          />
+        </Link>
 
         <Card
           title="Licenças"

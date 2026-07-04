@@ -1,14 +1,12 @@
-import { useLocation } from "react-router-dom";
 import PlatformSidebar from "./sidebars/PlatformSidebar";
-import AxeSidebar from "./sidebars/AxeSidebar";
+import ProductSidebar from "./sidebars/ProductSidebar";
+import { usePlatform } from "../../platform/hooks/usePlatform";
 
 export default function Sidebar() {
-  const location = useLocation();
+  const { activeProduct } = usePlatform();
 
-  const isAxeProduct = location.pathname.includes("/products/axe");
-
-  if (isAxeProduct) {
-    return <AxeSidebar />;
+  if (activeProduct) {
+    return <ProductSidebar />;
   }
 
   return <PlatformSidebar />;

@@ -1,26 +1,20 @@
 import { NavLink } from "react-router-dom";
-import {
-  Home,
-  Users,
-  Boxes,
-  KeyRound,
-  UserCog,
-  Palette,
-} from "lucide-react";
+import { Home } from "lucide-react";
 import { usePlatform } from "../../../platform/hooks/usePlatform";
+import { axeProductConfig } from "../../../products/axe/config/product.config";
 
-const menu = [
-  { label: "Dashboard", path: "/", icon: Home },
-  { label: "Clientes", path: "/clientes", icon: Users },
-  { label: "Produtos", path: "/produtos", icon: Boxes },
-  { label: "Licenças", path: "/licencas", icon: KeyRound },
-  { label: "Usuários", path: "/usuarios", icon: UserCog },
-  { label: "White Label", path: "/white-label", icon: Palette },
-  { label: "Design System", path: "/design-system", icon: Palette },
-];
+const productConfigs = {
+  axe: axeProductConfig,
+};
 
-export default function PlatformSidebar() {
-  const { platform } = usePlatform();
+export default function ProductSidebar() {
+  const { activeProduct } = usePlatform();
+
+  const productConfig = productConfigs[activeProduct?.id];
+
+  if (!productConfig) {
+    return null;
+  }
 
   return (
     <aside
@@ -32,15 +26,22 @@ export default function PlatformSidebar() {
         padding: 20,
       }}
     >
-      <h2>{platform.name}</h2>
-      <small style={{ color: "var(--ii-color-text-secondary)" }}>
-        v{platform.version}
+      <h2>{productConfig.name}</h2>
+
+      <small
+        style={{
+          color: "var(--ii-color-text-secondary)",
+          display: "block",
+          marginBottom: 12,
+        }}
+      >
+        v{productConfig.version}
       </small>
 
       <hr style={{ borderColor: "rgba(255,255,255,.15)" }} />
 
       <nav style={{ marginTop: 24 }}>
-        {menu.map((item) => {
+        {productConfig.menu.map((item) => {
           const Icon = item.icon;
 
           return (
@@ -66,6 +67,29 @@ export default function PlatformSidebar() {
             </NavLink>
           );
         })}
+
+        <hr
+          style={{
+            borderColor: "rgba(255,255,255,.15)",
+            margin: "16px 0",
+          }}
+        />
+
+        <NavLink
+          to="/"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 12,
+            color: "#FFF",
+            textDecoration: "none",
+            padding: "12px 8px",
+            borderRadius: 8,
+          }}
+        >
+          <Home size={20} />
+          Hub da Plataforma
+        </NavLink>
       </nav>
     </aside>
   );

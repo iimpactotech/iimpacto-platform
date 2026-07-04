@@ -1,3 +1,4 @@
+import { usePlatform } from "../../../platform/hooks/usePlatform";
 import { NavLink } from "react-router-dom";
 import {
   Home,
@@ -19,10 +20,16 @@ const menu = [
   { label: "Biblioteca", path: "/products/axe/biblioteca", icon: BookOpen },
   { label: "Relatórios", path: "/products/axe/relatorios", icon: BarChart3 },
   { label: "Administração", path: "/products/axe/configuracoes", icon: Settings },
-  { label: "Voltar para Platform", path: "/", icon: Home },
+
+  // Separador lógico
+  { label: "-", path: "#", icon: null },
+
+  { label: "Hub da Plataforma", path: "/", icon: Home },
 ];
 
 export default function AxeSidebar() {
+  const { activeProduct } = usePlatform();
+
   return (
     <aside
       style={{
@@ -33,12 +40,34 @@ export default function AxeSidebar() {
         padding: 20,
       }}
     >
-      <h2>Axé de IImpacto</h2>
+      <h2>{activeProduct?.name ?? "Produto"}</h2>
+
+      <small
+        style={{
+          color: "var(--ii-color-text-secondary)",
+          display: "block",
+          marginBottom: 12,
+        }}
+      >
+        v{activeProduct?.version ?? "0.0.0"}
+      </small>
 
       <hr style={{ borderColor: "rgba(255,255,255,.15)" }} />
 
       <nav style={{ marginTop: 24 }}>
-        {menu.map((item) => {
+        {menu.map((item, index) => {
+          if (item.label === "-") {
+            return (
+              <hr
+                key={index}
+                style={{
+                  borderColor: "rgba(255,255,255,.15)",
+                  margin: "16px 0",
+                }}
+              />
+            );
+          }
+
           const Icon = item.icon;
 
           return (
@@ -59,7 +88,7 @@ export default function AxeSidebar() {
                   : "transparent",
               })}
             >
-              <Icon size={20} />
+              {Icon && <Icon size={20} />}
               {item.label}
             </NavLink>
           );
