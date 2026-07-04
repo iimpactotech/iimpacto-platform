@@ -1,9 +1,62 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
 import DesignSystemPage from "../pages/DesignSystemPage";
+import {
+  Building2,
+  Users,
+  CalendarDays,
+  Package,
+} from "lucide-react";
+import Card from "../design-system/components/Card";
 
 function DashboardPage() {
-  return <h1>Dashboard</h1>;
+  return (
+    <div>
+      <h1 style={{ marginBottom: 8 }}>Dashboard</h1>
+      <p style={{ color: "var(--ii-color-text-secondary)", marginBottom: 24 }}>
+        Visão geral da plataforma Axé de IImpacto.
+      </p>
+
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+          gap: 20,
+        }}
+      >
+        <Card
+          title="Casas de Religião"
+          value="128"
+          subtitle="+12 este mês"
+          icon={<Building2 size={24} />}
+        />
+
+        <Card
+          title="Pessoas"
+          value="487"
+          subtitle="+23 cadastros"
+          icon={<Users size={24} />}
+          variant="info"
+        />
+
+        <Card
+          title="Rituais"
+          value="84"
+          subtitle="5 agendados hoje"
+          icon={<CalendarDays size={24} />}
+          variant="success"
+        />
+
+        <Card
+          title="Materiais"
+          value="325"
+          subtitle="+45 itens"
+          icon={<Package size={24} />}
+          variant="warning"
+        />
+      </div>
+    </div>
+  );
 }
 
 function CasasPage() {

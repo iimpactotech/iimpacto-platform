@@ -15,6 +15,7 @@ import Button from "../components/Button";
 import ColorsPage from "../foundations/Colors";
 import ButtonsPage from "../foundations/Buttons";
 import { appConfig } from "../../config/appConfig";
+import TypographyPage from "../foundations/Typography";
 import "./DesignSystemLab.css";
 
 const sections = [
@@ -36,6 +37,7 @@ export default function DesignSystemLab() {
 
 const currentSection = {
   colors: <ColorsPage />,
+  typography: <TypographyPage />,
   buttons: <ButtonsPage />,
 };
 
