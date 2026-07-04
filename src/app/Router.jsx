@@ -1,21 +1,26 @@
-import { createBrowserRouter } from "react-router-dom";
-import MainLayout from "../layouts/MainLayout";
-import DesignSystemPage from "../pages/DesignSystemPage";
+import HeroHeader from "../design-system/components/HeroHeader";
+import Button from "../design-system/components/Button";
+import Card from "../design-system/components/Card";
 import {
   Building2,
   Users,
   CalendarDays,
   Package,
 } from "lucide-react";
-import Card from "../design-system/components/Card";
+import { createBrowserRouter } from "react-router-dom";
+import MainLayout from "../layouts/MainLayout";
+import DesignSystemPage from "../pages/DesignSystemPage";
+
 
 function DashboardPage() {
   return (
     <div>
-      <h1 style={{ marginBottom: 8 }}>Dashboard</h1>
-      <p style={{ color: "var(--ii-color-text-secondary)", marginBottom: 24 }}>
-        Visão geral da plataforma Axé de IImpacto.
-      </p>
+      <HeroHeader
+        greeting="Bom dia, Alberto 👋"
+        title="Bem-vindo ao Axé de IImpacto"
+        description="Gerencie casas, pessoas, rituais, materiais e atendimentos em uma única plataforma."
+        action={<Button>Novo Atendimento</Button>}
+      />
 
       <div
         style={{

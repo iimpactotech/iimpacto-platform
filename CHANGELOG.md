@@ -33,3 +33,22 @@
 ---
 
 Desenvolvido por IImpacto Tech®
+
+
+# Axé de IImpacto
+
+## v1.0.0-alpha
+
+### Dashboard
+
+- Novo Dashboard Premium
+- Navegação React Router
+- Sidebar atualizada
+
+### Administração
+
+- Estrutura inicial criada
+
+### Design
+
+- Integração com IImpacto Design System v0.3.0

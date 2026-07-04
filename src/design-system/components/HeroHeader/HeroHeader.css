@@ -1,0 +1,53 @@
+.ii-hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:32px;
+
+    padding:32px;
+
+    border-radius:var(--ii-radius-lg);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(200,155,60,.10),
+            rgba(17,20,27,.95)
+        );
+
+    border:1px solid rgba(200,155,60,.15);
+
+    margin-bottom:32px;
+
+    box-shadow:var(--ii-shadow-soft);
+}
+
+.ii-hero__greeting{
+    color:var(--ii-color-primary);
+
+    font-weight:700;
+}
+
+.ii-hero h1{
+
+    margin-top:8px;
+
+    margin-bottom:16px;
+
+    color:var(--ii-color-text);
+
+}
+
+.ii-hero p{
+
+    max-width:700px;
+
+    color:var(--ii-color-text-secondary);
+
+}
+
+.ii-hero__action{
+
+    flex-shrink:0;
+
+}
