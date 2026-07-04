@@ -111,6 +111,6 @@ export const router = createBrowserRouter(
     },
   ],
   {
-    basename: "/axe-de-iimpacto",
+    basename: "/iimpacto-platform",
   }
 );
