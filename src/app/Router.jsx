@@ -1,3 +1,4 @@
+import PlatformDashboard from "../platform/hub/dashboard";
 import HeroHeader from "../design-system/components/HeroHeader";
 import Button from "../design-system/components/Button";
 import Card from "../design-system/components/Card";
@@ -10,7 +11,7 @@ import {
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
 import DesignSystemPage from "../pages/DesignSystemPage";
-
+import PlatformProducts from "../platform/produtos";
 
 function DashboardPage() {
   return (
@@ -97,17 +98,25 @@ export const router = createBrowserRouter(
     {
       path: "/",
       element: <MainLayout />,
-      children: [
-        { index: true, element: <DashboardPage /> },
-        { path: "casas", element: <CasasPage /> },
-        { path: "pessoas", element: <PessoasPage /> },
-        { path: "rituais", element: <RituaisPage /> },
-        { path: "materiais", element: <MateriaisPage /> },
-        { path: "biblioteca", element: <BibliotecaPage /> },
-        { path: "relatorios", element: <RelatoriosPage /> },
-        { path: "configuracoes", element: <ConfiguracoesPage /> },
-        { path: "design-system", element: <DesignSystemPage /> },
-      ],
+children: [
+  { index: true, element: <PlatformDashboard /> },
+
+  { path: "clientes", element: <h1>Clientes</h1> },
+  { path: "produtos", element: <PlatformProducts /> },
+  { path: "licencas", element: <h1>Licenças</h1> },
+  { path: "usuarios", element: <h1>Usuários</h1> },
+  { path: "white-label", element: <h1>White Label</h1> },
+
+ { path: "products/axe", element: <DashboardPage /> },
+{ path: "products/axe/casas", element: <CasasPage /> },
+{ path: "products/axe/pessoas", element: <PessoasPage /> },
+{ path: "products/axe/rituais", element: <RituaisPage /> },
+{ path: "products/axe/materiais", element: <MateriaisPage /> },
+{ path: "products/axe/biblioteca", element: <BibliotecaPage /> },
+{ path: "products/axe/relatorios", element: <RelatoriosPage /> },
+{ path: "products/axe/configuracoes", element: <ConfiguracoesPage /> },
+{ path: "design-system", element: <DesignSystemPage /> },
+],
     },
   ],
   {
