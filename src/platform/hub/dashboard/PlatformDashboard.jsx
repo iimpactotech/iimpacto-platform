@@ -1,3 +1,5 @@
+import { getGreeting } from "../../../packages/shared/utils/getGreeting";
+import { userConfig } from "../../config/user.config";
 import { Link } from "react-router-dom";
 import {
   Users,
@@ -16,7 +18,7 @@ export default function PlatformDashboard() {
   return (
     <div>
       <HeroHeader
-        greeting="Bom dia, Alberto 👋"
+        greeting={`${getGreeting()}, Alberto 👋`}
         title="Bem-vindo à IImpacto Platform"
         description="Ecossistema central para gestão de clientes, produtos, licenças, ambientes e configurações White Label."
         action={

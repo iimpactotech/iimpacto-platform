@@ -1,5 +1,7 @@
 import PlatformDashboard from "../platform/hub/dashboard";
 import HeroHeader from "../design-system/components/HeroHeader";
+import { getGreeting } from "../packages/shared/utils/getGreeting";
+import { userConfig } from "../platform/config/user.config";
 import Button from "../design-system/components/Button";
 import Card from "../design-system/components/Card";
 import {
@@ -16,8 +18,8 @@ import PlatformProducts from "../platform/produtos";
 function DashboardPage() {
   return (
     <div>
-      <HeroHeader
-        greeting="Bom dia, Alberto 👋"
+       <HeroHeader
+        greeting={`${getGreeting()}, ${userConfig.name} 👋`}
         title="Bem-vindo ao Axé de IImpacto"
         description="Gerencie casas, pessoas, rituais, materiais e atendimentos em uma única plataforma."
         action={<Button>Novo Atendimento</Button>}
